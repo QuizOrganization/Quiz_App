@@ -11,7 +11,6 @@ import org.hibernate.annotations.JdbcTypeCode;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -47,5 +46,5 @@ public class QuestionEntity {
     QuestionResponseSelectionType type;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "question")
-    Set<az.ingress.quiz.domain.AnswerEntity> answers;
+    Set<AnswerEntity> answers;
 }

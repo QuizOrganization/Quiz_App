@@ -1,22 +1,11 @@
-package az.ingress.quiz.domain;
+package az.ingress.quizapp.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.JdbcTypeCode;
 
-import java.util.Objects;
 import java.util.UUID;
 
 @Entity
@@ -42,5 +31,5 @@ public class AnswerEntity {
     @ManyToOne
     @JoinColumn(name = "question_id")
     @Getter(AccessLevel.NONE)
-    az.ingress.quiz.domain.QuestionEntity question;
+    QuestionEntity question;
 }
